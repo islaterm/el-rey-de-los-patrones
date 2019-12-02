@@ -1,0 +1,30 @@
+\begin{Answer}[ref={ex:singleton-1}]
+  Para asegurarse de que no se pueda crear más de una instancia de un objeto se necesita
+  ocultar el constructor de la clase.
+  Esto implica que la clase sólo puede ser instanciada desde dentro de ella, por lo que es
+  necesario que el método para obtener la instancia de la clase sea estático.
+  Esto es lo que se conoce como \textit{singleton pattern}.
+
+  Modifiquemos la clase \java{NullEffect} para que sea un \textit{singleton}.
+  \begin{minted}[autogobble, bgcolor=LightGray]{java}
+    // com.github.islaterm.yugi.effect.NullEffect
+    public class NullEffect implements IEffect {
+      private IEffect instance;
+
+      private NullEffect() {
+      }
+
+      @Override
+      public void use() {
+        System.out.println("No hago nada :D");
+      }
+      
+      public IEffect getInstance() {
+        if (instance == null) {
+          instance = new NullEffect();
+        }
+        return instance;
+      }
+    }
+  \end{minted}
+\end{Answer}
