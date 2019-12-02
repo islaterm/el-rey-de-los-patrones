@@ -1,63 +1,61 @@
-\section{Null Object}
-  \begin{Answer}[ref={ex:null-1}]
-    Para resolver este problema debemos crear una clase que represente los efectos de los
-    monstruos y hechizos.
-    
-    Adicionalmente, necesitamos una forma de definir el caso en que un monstruo no tenga 
-    efecto, para esto último utilizaremos \textit{null object pattern}.
-    
-    Primero, necesitaremos una interfaz para los efectos y permitir que las cartas puedan
-    tener dichos efectos:
-    \begin{minted}[autogobble, bgcolor=LightGray]{java}
-      // com.github.islaterm.yugi.card.effect.IEffect
-      public interface IEffect {
-        void use();
-      }
-      // com.github.islaterm.yugi.card.ICard
-      void useEffect();
-      // com.github.islaterm.yugi.card.AbstractCard
+\begin{Answer}[ref={ex:null-1}]
+  Para resolver este problema debemos crear una clase que represente los efectos de los
+  monstruos y hechizos.
+  
+  Adicionalmente, necesitamos una forma de definir el caso en que un monstruo no tenga 
+  efecto, para esto último utilizaremos \textit{null object pattern}.
+  
+  Primero, necesitaremos una interfaz para los efectos y permitir que las cartas puedan
+  tener dichos efectos:
+  \begin{minted}[autogobble, bgcolor=LightGray]{java}
+    // com.github.islaterm.yugi.card.effect.IEffect
+    public interface IEffect {
+      void use();
+    }
+    // com.github.islaterm.yugi.card.ICard
+    void useEffect();
+    // com.github.islaterm.yugi.card.AbstractCard
+    @Override
+    public void useEffect() {
+      cardEffect.use();
+    }      
+  \end{minted}
+
+  Ahora, podemos implementar los efectos concretos:
+  \begin{minted}[autogobble, bgcolor=LightGray]{java}
+    // com.github.islaterm.yugi.effect.Effect
+    public class Effect implements IEffect {
       @Override
-      public void useEffect() {
-        cardEffect.use();
-      }      
-    \end{minted}
+      public void use() {
+        System.out.println("Soy un efecto owo");
+      }
+    }
+    // com.github.islaterm.yugi.effect.NullEffect  
+    public final class NullEffect implements IEffect {
+      @Override
+      public void use() {
+        System.out.println("No hago nada :D");
+      }
+    }
+  \end{minted}
+  La clase \java{NullEffect} se define como \java{final}, esto significa que la clase no
+  puede ser extendida.
+  Esto ayuda a entender mejor el propósito de la clase.
+  
+  Con los efectos definidos podemos crear los constructores respectivos de las cartas 
+  para definir sus efectos.
+  \begin{minted}[autogobble, bgcolor=LightGray]{java}
+    // com.github.islaterm.yugi.card.BasicMonsterCard
+    public BasicMonsterCard(IEffect effect) {
+      cardEffect = effect;
+    }
+    // Los otros tipos de monstruos son análogos
+    // com.github.islaterm.yugi.card.SpellCard
+    public SpellCard(Effect effect) {
+      cardEffect = effect;
+    }
+  \end{minted}
 
-    Ahora, podemos implementar los efectos concretos:
-    \begin{minted}[autogobble, bgcolor=LightGray]{java}
-      // com.github.islaterm.yugi.effect.Effect
-      public class Effect implements IEffect {
-        @Override
-        public void use() {
-          System.out.println("Soy un efecto owo");
-        }
-      }
-      // com.github.islaterm.yugi.effect.NullEffect  
-      public final class NullEffect implements IEffect {
-        @Override
-        public void use() {
-          System.out.println("No hago nada :D");
-        }
-      }
-    \end{minted}
-    La clase \java{NullEffect} se define como \java{final}, esto significa que la clase no
-    puede ser extendida.
-    Esto ayuda a entender mejor el propósito de la clase.
-    
-    Con los efectos definidos podemos crear los constructores respectivos de las cartas 
-    para definir sus efectos.
-    \begin{minted}[autogobble, bgcolor=LightGray]{java}
-      // com.github.islaterm.yugi.card.BasicMonsterCard
-      public BasicMonsterCard(IEffect effect) {
-        cardEffect = effect;
-      }
-      // Los otros tipos de monstruos son análogos
-      // com.github.islaterm.yugi.card.SpellCard
-      public SpellCard(Effect effect) {
-        cardEffect = effect;
-      }
-    \end{minted}
-
-    Note que el constructor de las cartas de hechizos no puede recibir efectos nulos 
-    porque no tendría sentido.
-  \end{Answer}
-%
+  Note que el constructor de las cartas de hechizos no puede recibir efectos nulos 
+  porque no tendría sentido.
+\end{Answer}
