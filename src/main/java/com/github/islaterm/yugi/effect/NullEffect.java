@@ -1,7 +1,7 @@
 package com.github.islaterm.yugi.effect;
 
 public class NullEffect implements IEffect {
-  private IEffect instance;
+  private static IEffect instance;
 
   private NullEffect() {
   }
@@ -11,7 +11,7 @@ public class NullEffect implements IEffect {
     System.out.println("No hago nada :D");
   }
 
-  public IEffect getInstance() {
+  public static IEffect getInstance() {
     if (instance == null) {
       instance = new NullEffect();
     }

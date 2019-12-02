@@ -1,0 +1,24 @@
+\section{Flyweight factory}
+  \begin{Exercise}[
+    title={Eliminar la duplicación de objetos}, 
+    label={ex:flyweight-1}, 
+    difficulty=2
+  ]
+    En el juego puede suceder que varias cartas tengan el mismo efecto, en dicho caso 
+    crear varias veces el mismo objeto sería un uso ineficiente de memoria.
+    
+    Modifique la implementación para que ningún efecto se pueda crear más de una vez.
+  \end{Exercise}
+
+  \begin{Exercise}[
+    title={Inicialización \textit{lazy} de efectos (Propuesto)}, 
+    label={ex:flyweight-2}, 
+    difficulty=3
+  ]
+    Existe la posibilidad de que los efectos de algunas cartas nunca sean utilizados, en
+    ese caso también sería un uso ineficiente de memoria crear esos efectos.
+
+    Extienda la implementación anterior para que los efectos se creen solamente si se 
+    necesitan.
+  \end{Exercise}
+%

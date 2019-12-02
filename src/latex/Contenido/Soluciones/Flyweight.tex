@@ -1,0 +1,24 @@
+\begin{Answer}[ref={ex:flyweight-1}]
+  Para evitar crear un mismo objeto dos veces ya se vio que se puede utilizar un 
+  \textit{singleton}, pero si se tienen muchos objetos que se requiere que sean únicos
+  entonces implementar este patrón agregaría mucha complejidad al código.
+  
+  En vez de eso, se puede utilizar \textit{factory pattern} para unificar y simplificar la
+  creación de dichos objetos.
+  Ahora, si además de eso el \textit{factory} guarda los objetos que ha creado para no 
+  crearlos de nuevo, estaremos utilizando \textit{flyweight factory pattern}.
+
+  \begin{minted}[autogobble, bgcolor=LightGray]{java}
+    // com.github.islaterm.yugi.effect.FlyweightEffectFactory
+    public class FlyweightEffectFactory {
+      private Map<String, IEffect> createdEffects = new HashMap<>();
+
+      public IEffect getEffect(String effectId) {
+        if(!createdEffects.containsKey(effectId)) {
+          createdEffects.put(effectId, new Effect());
+        }
+        return createdEffects.get(effectId);
+      }
+    }
+  \end{minted}
+\end{Answer}

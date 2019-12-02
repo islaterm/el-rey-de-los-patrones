@@ -49,6 +49,9 @@
       public interface IMonsterCard extends ICard {
         void addTribute(IMonsterCard card);
       }
+    \end{minted}
+
+    \begin{minted}[autogobble, bgcolor=LightGray]{java}
       // com.github.islaterm.yugi.card.monster.AbstractMonsterCard
       public abstract class AbstractMonsterCard extends AbstractCard implements IMonsterCard {
         private Set<IMonsterCard> tributes = new HashSet<>();
@@ -57,10 +60,7 @@
         public void addTribute(IMonsterCard card) {
           this.tributes.add(card);
         }
-
-    \end{minted}
-
-    \begin{minted}[autogobble, bgcolor=LightGray]{java}
+      
         @Override
         public void playToMat(GameMat gameMat) {
           if (enoughSacrifices()) {
