@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class SpellCard extends AbstractCard {
   @Override
-  public void playtoMath(@NotNull GameMat gameMat) {
+  public void playToMat(@NotNull GameMat gameMat) {
     gameMat.addSpell(this);
   }
 }
