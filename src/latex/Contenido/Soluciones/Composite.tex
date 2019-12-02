@@ -1,0 +1,30 @@
+\begin{Answer}[ref=ex:composite-1]
+  Para resolver este ejercicio utilizaremos \textit{composite pattern}, este patrón se 
+  puede utilizar en cualquier estructura que deba recorrerse de forma recursiva y que 
+  pueda modelarse como un árbol.
+  
+  En este caso, la estructura de cartas que tenemos es un árbol, donde cada carta puede 
+  referenciar a 0 o más cartas, para aplicar este patrón se necesita crear una interfaz 
+  común para los objetos que foman parte de la estructura.
+  En nuestro caso esa interfaz ya la hemos definido en \java{ICard}, pero habrá que 
+  agregarle un método que pueda recorrer el árbol, así:
+
+  \begin{minted}[autogobble, bgcolor=LightGray]{java}
+    // com.github.islaterm.yugi.card.ICard
+    void applyEquippedEffects();
+    // com.github.islaterm.yugi.card.AbstractCard
+    protected Set<ICard> equippedCards = new HashSet<>();
+
+    @Override
+    public void applyEquippedEffects() {
+      for (ICard card : equippedCards) {
+        card.useEffect();
+        card.applyEquippedEffects();
+      }
+    }
+  \end{minted}
+
+  De esta forma los efectos se aplicarán recursivamente y terminarán una vez que se llegue
+  a una carta que no tenga ninguna otra carta equipada. 
+\end{Answer}
+%

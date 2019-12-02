@@ -1,7 +1,7 @@
 package com.github.islaterm.yugi.card;
 
 import com.github.islaterm.yugi.GameMat;
-import com.github.islaterm.yugi.card.effect.Effect;
+import com.github.islaterm.yugi.effect.Effect;
 import org.jetbrains.annotations.NotNull;
 
 public class SpellCard extends AbstractCard {

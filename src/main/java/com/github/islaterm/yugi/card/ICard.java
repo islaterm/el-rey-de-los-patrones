@@ -9,4 +9,6 @@ public interface ICard {
   void playToMat(GameMat gameMat);
 
   void useEffect();
+
+  void applyEquippedEffects();
 }

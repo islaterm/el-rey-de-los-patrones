@@ -8,7 +8,7 @@
   Primero, necesitaremos una interfaz para los efectos y permitir que las cartas puedan
   tener dichos efectos:
   \begin{minted}[autogobble, bgcolor=LightGray]{java}
-    // com.github.islaterm.yugi.card.effect.IEffect
+    // com.github.islaterm.yugi.effect.IEffect
     public interface IEffect {
       void use();
     }
@@ -45,7 +45,7 @@
   Con los efectos definidos podemos crear los constructores respectivos de las cartas 
   para definir sus efectos.
   \begin{minted}[autogobble, bgcolor=LightGray]{java}
-    // com.github.islaterm.yugi.card.BasicMonsterCard
+    // com.github.islaterm.yugi.card.monster.BasicMonsterCard
     public BasicMonsterCard(IEffect effect) {
       cardEffect = effect;
     }

@@ -1,5 +1,9 @@
 \section{Composite}
-  \begin{Exercise}[title={Cartas de efecto continuo}, label={ex:composite-1}]
+  \begin{Exercise}[
+      title={Cartas de efecto continuo},
+      label={ex:composite-1}, 
+      difficulty=2
+    ]
     Considere ahora que existen efectos que afectan a otras cartas y que se mantienen a lo
     largo del juego, en este caso se definen 2:
     \begin{itemize}
@@ -14,5 +18,17 @@
     Esto puede causar que haya cartas con referencias a otras que a su vez tienen 
     referencias a otras.
     Implemente esta nueva funcionalidad de las cartas. 
+  \end{Exercise}
+
+  \begin{Exercise}[title={Cartas de campo}, label={ex:composite-2}, difficulty=4]
+    Se le solicita ahora que agregue un nuevo tipo de carta al juego.
+
+    Las cartas de campo son cartas que se juegan en una zona propia del \textit{game mat}
+    y que tienen efecto sobre todo el resto de las cartas.
+
+    Extienda el código para agregar esta mecánica:
+
+    \textbf{¡CUIDADO!} Si se implementa de la misma manera que en el ejercicio anterior se
+    caería en una referencia circular.
   \end{Exercise}
 %

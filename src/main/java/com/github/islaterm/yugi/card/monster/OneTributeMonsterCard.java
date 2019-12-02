@@ -1,6 +1,6 @@
 package com.github.islaterm.yugi.card.monster;
 
-import com.github.islaterm.yugi.card.effect.IEffect;
+import com.github.islaterm.yugi.effect.IEffect;
 
 public class OneTributeMonsterCard extends AbstractMonsterCard {
   public OneTributeMonsterCard(IEffect effect) {

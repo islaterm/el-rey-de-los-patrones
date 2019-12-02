@@ -1,4 +1,4 @@
-package com.github.islaterm.yugi.card.effect;
+package com.github.islaterm.yugi.effect;
 
 public class NullEffect implements IEffect {
   @Override
