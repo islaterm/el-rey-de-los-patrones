@@ -1,26 +1,4 @@
-\section{Template method}
-  \begin{Exercise}[title={Zonas de juego}, label={ex:template-1}]
-    Si bien existen muchas diferencias entre estos dos tipos de cartas, por ahora 
-    consideraremos que solo se diferencian en la zona del campo en la que son jugadas.
-
-    Defina las cartas de monstruos y de hechizos para que puedan jugarse en su zona 
-    correspondiente siguiendo buenas metodologías de diseño.
-  \end{Exercise}
-
-  \begin{Exercise}[title={Niveles de monstruos}, label={ex:template-2}]
-    Además de los tipos de cartas del ejercicio \ref{ex:template-1} se tienen distintos 
-    niveles de monstruos que requerirán sacrificios para ser jugados.
-    Los niveles son:
-    \begin{itemize}
-      \item \textbf{Niveles 1 a 4:} Se pueden jugar sin necesidad de hacer sacrificios.
-      \item \textbf{Niveles 5 y 6:} Necesitan de un sacrificio para ser jugados.
-      \item \textbf{Niveles 7 y superiores:} Necesitan de 2 sacrificios para jugarse.  
-    \end{itemize}
-
-    Modifique el código para permitir esta mecánica.
-  \end{Exercise}
-
-  \begin{Answer}[ref={ex:template-1}]
+\begin{Answer}[ref={ex:template-1}]
     Lo primero que necesitamos hacer es crear una interfaz y una clase abstracta que 
     represente todos los tipos de cartas, así:
     \begin{minted}[autogobble, bgcolor=LightGray]{java}
@@ -121,4 +99,3 @@
       }
     \end{minted}
   \end{Answer}
-% 

@@ -7,4 +7,6 @@ import com.github.islaterm.yugi.GameMat;
  */
 public interface ICard {
   void playToMat(GameMat gameMat);
+
+  void useEffect();
 }
