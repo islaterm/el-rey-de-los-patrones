@@ -4,5 +4,5 @@ package com.github.islaterm.yugi.visitor;
  * @author Ignacio Slater Muñoz
  * @since
  */
-public interface IFlipCardEffect {
+public interface IFlipCardEffect extends IVisitor {
 }

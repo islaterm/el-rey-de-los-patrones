@@ -8,7 +8,7 @@ public class FlyweightEffectFactory {
 
   public IEffect getEffect(String effectId) {
     if (!createdEffects.containsKey(effectId)) {
-      createdEffects.put(effectId, new Effect());
+      createdEffects.put(effectId, new AbstractEffect());
     }
     return createdEffects.get(effectId);
   }

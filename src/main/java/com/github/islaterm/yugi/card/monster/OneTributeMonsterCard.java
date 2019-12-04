@@ -4,7 +4,7 @@ import com.github.islaterm.yugi.effect.IEffect;
 
 public class OneTributeMonsterCard extends AbstractMonsterCard {
   public OneTributeMonsterCard(IEffect effect) {
-    cardEffect = effect;
+    cardEffects = effect;
   }
 
   @Override
