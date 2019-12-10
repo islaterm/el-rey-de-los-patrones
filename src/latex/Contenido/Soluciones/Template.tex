@@ -2,12 +2,12 @@
     Lo primero que necesitamos hacer es crear una interfaz y una clase abstracta que 
     represente todos los tipos de cartas, así:
     \begin{minted}[autogobble, bgcolor=LightGray]{java}
-      // com.github.islaterm.yugi.card.ICard
+      // com.github.islaterm.yugi.model.card.ICard
       public interface ICard {
         void playToMat(GameMat gameMat);
       }
 
-      // com.github.islaterm.yugi.card.AbstractCard
+      // com.github.islaterm.yugi.model.card.AbstractCard
       public abstract class AbstractCard implements ICard {
         @Override
         public abstract void playToMat(GameMat gameMat);
@@ -21,7 +21,7 @@
 
     Ahora, las implementaciones particulares de cada método serán:
     \begin{minted}[autogobble, bgcolor=LightGray]{java}
-      // com.github.islaterm.yugi.card.monster.BasicMonsterCard
+      // com.github.islaterm.yugi.model.card.monster.BasicMonsterCard
       public class MonsterCard extends AbstractCard {
 
         @Override
@@ -30,7 +30,7 @@
         }
       }
 
-      // com.github.islaterm.yugi.card.SpellCard
+      // com.github.islaterm.yugi.model.card.SpellCard
       public class SpellCard extends AbstractCard {
         @Override
         public void playToMat(@NotNull GameMat gameMat) {
@@ -45,14 +45,14 @@
     Para esto necesitaremos extender el modelo de cartas de monstruos que llevamos hasta 
     ahora.
     \begin{minted}[autogobble, bgcolor=LightGray]{java}
-      // com.github.islaterm.yugi.card.monster.IMonsterCard
+      // com.github.islaterm.yugi.model.card.monster.IMonsterCard
       public interface IMonsterCard extends ICard {
         void addTribute(IMonsterCard card);
       }
     \end{minted}
 
     \begin{minted}[autogobble, bgcolor=LightGray]{java}
-      // com.github.islaterm.yugi.card.monster.AbstractMonsterCard
+      // com.github.islaterm.yugi.model.card.monster.AbstractMonsterCard
       public abstract class AbstractMonsterCard extends AbstractCard implements IMonsterCard {
         private Set<IMonsterCard> tributes = new HashSet<>();
 
@@ -76,21 +76,21 @@
     Ahora, con esas clases definidas se pueden implementar los tres tipos de cartas de 
     monstruos que necesitamos.
     \begin{minted}[autogobble, bgcolor=LightGray]{java}
-      // com.github.islaterm.yugi.card.monster.BasicMonsterCard
+      // com.github.islaterm.yugi.model.card.monster.BasicMonsterCard
       public class BasicMonsterCard extends AbstractMonsterCard {
         @Override
         protected boolean enoughSacrifices() {
           return tributes.isEmpty();
         }
       }
-      // com.github.islaterm.yugi.card.monster.OneTributeMonsterCard
+      // com.github.islaterm.yugi.model.card.monster.OneTributeMonsterCard
       public class OneTributeMonsterCard extends AbstractMonsterCard {
         @Override
         protected boolean enoughSacrifices() {
           return tributes.size() == 1;
         }
       }
-      // com.github.islaterm.yugi.card.monster.TwoTributesMonsterCard
+      // com.github.islaterm.yugi.model.card.monster.TwoTributesMonsterCard
       public class TwoTributesMonsterCard extends AbstractMonsterCard {
         @Override
         protected boolean enoughSacrifices() {

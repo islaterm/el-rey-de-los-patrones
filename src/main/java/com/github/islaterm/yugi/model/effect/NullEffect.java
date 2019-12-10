@@ -1,4 +1,4 @@
-package com.github.islaterm.yugi.effect;
+package com.github.islaterm.yugi.model.effect;
 
 public class NullEffect implements IEffect {
   private static IEffect instance;

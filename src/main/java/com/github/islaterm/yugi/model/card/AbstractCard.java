@@ -1,10 +1,9 @@
-package com.github.islaterm.yugi.card;
+package com.github.islaterm.yugi.model.card;
 
-import com.github.islaterm.yugi.GameMat;
-import com.github.islaterm.yugi.card.monster.MonsterCardState;
-import com.github.islaterm.yugi.effect.IEffect;
-import com.github.islaterm.yugi.visitor.IFlipCardEffect;
-import com.github.islaterm.yugi.visitor.IVisitor;
+import com.github.islaterm.yugi.model.GameMat;
+import com.github.islaterm.yugi.model.card.monster.MonsterCardState;
+import com.github.islaterm.yugi.model.effect.IEffect;
+import com.github.islaterm.yugi.model.visitor.IFlipCardEffect;
 
 import java.util.HashSet;
 import java.util.Set;

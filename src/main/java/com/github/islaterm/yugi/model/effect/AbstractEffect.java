@@ -1,6 +1,6 @@
-package com.github.islaterm.yugi.effect;
+package com.github.islaterm.yugi.model.effect;
 
-import com.github.islaterm.yugi.card.ICard;
+import com.github.islaterm.yugi.model.card.ICard;
 
 public abstract class AbstractEffect implements IEffect {
   protected ICard equippedTo;

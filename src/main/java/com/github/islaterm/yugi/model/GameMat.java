@@ -1,7 +1,7 @@
-package com.github.islaterm.yugi;
+package com.github.islaterm.yugi.model;
 
-import com.github.islaterm.yugi.card.ICard;
-import com.github.islaterm.yugi.card.monster.IMonsterCard;
+import com.github.islaterm.yugi.model.card.ICard;
+import com.github.islaterm.yugi.model.card.monster.IMonsterCard;
 
 import java.util.HashSet;
 import java.util.Set;

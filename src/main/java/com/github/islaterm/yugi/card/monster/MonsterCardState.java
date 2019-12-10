@@ -1,5 +1,0 @@
-package com.github.islaterm.yugi.card.monster;
-
-public enum MonsterCardState {
-  FACE_DOWN, DEFENSE_MODE, ATTACK_MODE;
-}

@@ -8,13 +8,13 @@
   Primero, necesitaremos una interfaz para los efectos y permitir que las cartas puedan
   tener dichos efectos:
   \begin{minted}[autogobble, bgcolor=LightGray]{java}
-    // com.github.islaterm.yugi.effect.IEffect
+    // com.github.islaterm.yugi.model.effect.IEffect
     public interface IEffect {
       void use();
     }
-    // com.github.islaterm.yugi.card.ICard
+    // com.github.islaterm.yugi.model.card.ICard
     void useEffect();
-    // com.github.islaterm.yugi.card.AbstractCard
+    // com.github.islaterm.yugi.model.card.AbstractCard
     @Override
     public void useEffect() {
       cardEffect.use();
@@ -23,14 +23,14 @@
 
   Ahora, podemos implementar los efectos concretos:
   \begin{minted}[autogobble, bgcolor=LightGray]{java}
-    // com.github.islaterm.yugi.effect.AbstractEffect
+    // com.github.islaterm.yugi.model.effect.AbstractEffect
     public class Effect implements IEffect {
       @Override
       public void use() {
         System.out.println("Soy un efecto owo");
       }
     }
-    // com.github.islaterm.yugi.effect.NullEffect  
+    // com.github.islaterm.yugi.model.effect.NullEffect
     public final class NullEffect implements IEffect {
       @Override
       public void use() {
@@ -45,12 +45,12 @@
   Con los efectos definidos podemos crear los constructores respectivos de las cartas 
   para definir sus efectos.
   \begin{minted}[autogobble, bgcolor=LightGray]{java}
-    // com.github.islaterm.yugi.card.monster.BasicMonsterCard
+    // com.github.islaterm.yugi.model.card.monster.BasicMonsterCard
     public BasicMonsterCard(IEffect effect) {
       cardEffect = effect;
     }
     // Los otros tipos de monstruos son análogos
-    // com.github.islaterm.yugi.card.SpellCard
+    // com.github.islaterm.yugi.model.card.SpellCard
     public SpellCard(Effect effect) {
       cardEffect = effect;
     }

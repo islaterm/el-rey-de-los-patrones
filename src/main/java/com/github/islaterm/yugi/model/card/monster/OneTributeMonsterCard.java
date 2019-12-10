@@ -1,9 +1,11 @@
-package com.github.islaterm.yugi.card.monster;
+package com.github.islaterm.yugi.model.card.monster;
 
-import com.github.islaterm.yugi.effect.IEffect;
+import com.github.islaterm.yugi.model.effect.IEffect;
+
+import java.util.Set;
 
 public class OneTributeMonsterCard extends AbstractMonsterCard {
-  public OneTributeMonsterCard(IEffect effect) {
+  public OneTributeMonsterCard(Set<IEffect> effect) {
     cardEffects = effect;
   }
 

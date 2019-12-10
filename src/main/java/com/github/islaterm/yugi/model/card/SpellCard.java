@@ -1,9 +1,8 @@
-package com.github.islaterm.yugi.card;
+package com.github.islaterm.yugi.model.card;
 
-import com.github.islaterm.yugi.GameMat;
-import com.github.islaterm.yugi.effect.IEffect;
-import com.github.islaterm.yugi.visitor.IVisitor;
-import org.jetbrains.annotations.NotNull;
+import com.github.islaterm.yugi.model.GameMat;
+import com.github.islaterm.yugi.model.effect.IEffect;
+import com.github.islaterm.yugi.model.visitor.IVisitor;
 
 import java.util.Set;
 
@@ -13,7 +12,7 @@ public class SpellCard extends AbstractCard {
   }
 
   @Override
-  public void playToMat(@NotNull GameMat gameMat) {
+  public void playToMat(GameMat gameMat) {
     gameMat.addSpell(this);
   }
 

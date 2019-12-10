@@ -1,4 +1,4 @@
-package com.github.islaterm.yugi.visitor;
+package com.github.islaterm.yugi.model.visitor;
 
 /**
  * @author Ignacio Slater Muñoz

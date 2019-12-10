@@ -1,7 +1,7 @@
-package com.github.islaterm.yugi.visitor;
+package com.github.islaterm.yugi.model.visitor;
 
-import com.github.islaterm.yugi.card.SpellCard;
-import com.github.islaterm.yugi.card.monster.IMonsterCard;
+import com.github.islaterm.yugi.model.card.SpellCard;
+import com.github.islaterm.yugi.model.card.monster.IMonsterCard;
 
 /**
  * @author Ignacio Slater Muñoz

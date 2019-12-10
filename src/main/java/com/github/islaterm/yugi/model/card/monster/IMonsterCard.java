@@ -1,6 +1,6 @@
-package com.github.islaterm.yugi.card.monster;
+package com.github.islaterm.yugi.model.card.monster;
 
-import com.github.islaterm.yugi.card.ICard;
+import com.github.islaterm.yugi.model.card.ICard;
 
 public interface IMonsterCard extends ICard {
   void addTribute(IMonsterCard card);

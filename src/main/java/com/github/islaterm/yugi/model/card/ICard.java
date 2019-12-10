@@ -1,7 +1,7 @@
-package com.github.islaterm.yugi.card;
+package com.github.islaterm.yugi.model.card;
 
-import com.github.islaterm.yugi.GameMat;
-import com.github.islaterm.yugi.visitor.IVisitor;
+import com.github.islaterm.yugi.model.GameMat;
+import com.github.islaterm.yugi.model.visitor.IVisitor;
 
 /**
  * Common interface for all playable cards of the game.

@@ -1,4 +1,4 @@
-package com.github.islaterm.yugi.effect;
+package com.github.islaterm.yugi.model.effect;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,7 +8,7 @@ public class FlyweightEffectFactory {
 
   public IEffect getEffect(String effectId) {
     if (!createdEffects.containsKey(effectId)) {
-      createdEffects.put(effectId, new AbstractEffect());
+      createdEffects.put(effectId, NullEffect.getInstance());
     }
     return createdEffects.get(effectId);
   }
